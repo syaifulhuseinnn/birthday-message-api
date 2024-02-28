@@ -23,22 +23,26 @@ docker compose up -d
 ```
 3. Open Postman and create new requests
    - Get all users (GET)
+		
 		URL
 		```
 		http://localhost:3000/users
 		```
 	
 	- Get single user (GET)
+		
 		URL
 		```
 		http://localhost:3000/users/{user_id:number}
 		```
 
    - Create a new user (POST)
+		
 		URL
 		```
 		http://localhost:3000/users
 		```
+		
 		Request body
 		```json
 		{
@@ -51,10 +55,12 @@ docker compose up -d
 		```
 
    - Update a user (PUT)
+		
 		URL
 		```
 		http://localhost:3000/users/{user_id:number}
 		```
+		
 		Request body
 		```json
 		{
@@ -63,7 +69,7 @@ docker compose up -d
 		```
 
    - DELETE (DELETE)
-		URL
+		
 		```
 		http://localhost:3000/users/{user_id:number}
 		```
