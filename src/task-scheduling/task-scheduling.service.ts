@@ -19,7 +19,6 @@ export class TaskSchedulingService {
     try {
       const users =
         await this.usersService.findAllByBirthdayDate(currentUtcTime);
-      // this.logger.debug(users);
       await this.sendMessageService.sendBirthdayMessage(users);
     } catch (error) {
       this.logger.error(error);

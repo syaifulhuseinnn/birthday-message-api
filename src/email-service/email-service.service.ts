@@ -12,7 +12,6 @@ export class EmailService {
         { email, message },
       );
 
-      // console.log(response.status);
       return {
         ...response.data,
         ...user,

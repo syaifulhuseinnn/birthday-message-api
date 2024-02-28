@@ -14,7 +14,6 @@ export class UsersMiddleware implements NestMiddleware {
     const { birthdayDate, location } = req.body;
 
     if (req.method === 'PUT' && !location) {
-      // console.log(req.params.id);
       const { location } = await this.usersService.findOne(+req.params.id);
       existingUserLocation = location;
     }
