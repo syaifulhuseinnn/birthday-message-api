@@ -73,3 +73,11 @@ docker compose up -d
 		```
 		http://localhost:3000/users/{user_id:number}
 		```
+# Access Database using Adminer
+1. Open URL `http://localhost:8080` on browser
+2. Fill in login page:
+   - System: PostgreSQL
+   - Server: db
+   - Username: postgres
+   - Password: qwerty@123
+   - Database: postgres
