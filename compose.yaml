@@ -1,0 +1,44 @@
+services:
+  backend:
+    build:
+      context: ./
+    container_name: backend
+    ports:
+      - '3000:3000'
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
+    depends_on:
+      - db
+    networks:
+      - sdt_network
+  db:
+    image: postgres:13-alpine
+    restart: always
+    shm_size: 128mb
+    container_name: db
+    expose:
+      - '5432'
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: qwerty@123
+    networks:
+      - sdt_network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    networks:
+      - sdt_network
+networks:
+  sdt_network:
+volumes:
+  postgres_data:
